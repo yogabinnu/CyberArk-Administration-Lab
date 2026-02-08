@@ -100,6 +100,60 @@ CPM rotates password
 Security Result:
 Password never stays static.
 
+
+# CyberArk Services Interaction – Internal Deep Flow
+
+## Objective
+
+To explain how CyberArk internal services work together to secure local administrator accounts and privileged credentials.
+
+---
+
+## Core Services Communication Flow
+
+Vault:
+- Central credential store
+- Secure encrypted storage
+
+CPM:
+- Connects to target servers
+- Changes local admin passwords
+- Verifies password health
+
+PSM:
+- Launches RDP/SSH sessions
+- Hides credentials from users
+- Records admin activity
+
+PVWA:
+- Access request portal
+- Authorization layer
+
+---
+
+## Local Administrator Protection Flow
+
+1. Local admin account exists on server
+2. CyberArk admin onboards account into Safe
+3. Vault stores credentials
+4. CPM rotates password automatically
+5. User requests access via PVWA
+6. PSM connects to server
+7. Session recorded
+8. CPM rotates password again after use
+
+---
+
+## Security Value
+
+Prevents:
+
+- Password sharing
+- Credential theft
+- Insider misuse
+- Privilege escalation
+
+
 ## Mermaid Architecture Flow Diagram
 
 ```mermaid
