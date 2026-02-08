@@ -25,6 +25,80 @@ PSM → Record Session
 CPM → Rotate Password After Use  
 
 ---
+Component Internal Responsibilities
+Vault
+
+Stores all privileged credentials
+
+Encrypted storage
+
+Central trust component
+
+CPM
+
+Handles:
+
+Password rotation
+
+Password reconciliation
+
+Policy enforcement
+
+Targets:
+
+Local admin accounts
+
+Service accounts
+
+Domain accounts
+
+PSM
+
+Session proxy
+
+Session recording
+
+Keystroke logging
+
+Prevents direct credential exposure
+
+PVWA
+
+Access portal
+
+Authorization layer
+
+Request management
+
+Local Administrator Account Lifecycle (Enterprise Flow)
+
+Step 1:
+Server built → Local Admin account created
+
+Step 2:
+CyberArk Onboarding:
+
+Account added to Safe
+
+CPM starts managing password
+
+Step 3:
+User requests access:
+
+Access approved via PVWA
+
+Step 4:
+PSM launches session:
+
+No password revealed
+
+Step 5:
+Session ends:
+
+CPM rotates password
+
+Security Result:
+Password never stays static.
 
 ## Mermaid Architecture Flow Diagram
 
