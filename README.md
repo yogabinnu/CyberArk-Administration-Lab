@@ -1,4 +1,4 @@
-# CyberArk Administration Lab
+# CyberArk Administration Activities
 
 ## Objective
 
